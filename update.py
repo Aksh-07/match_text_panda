@@ -17,7 +17,6 @@ class Update:
                     f"all_files/{file}", sep="delimiter", header=None, engine="python"
                 ).to_string().lower()
 
-            # self.all_files_dates[file] = os.path.getmtime(f"all_files/{file}")
             self.all_files_dates[file] = os.stat(f"all_files/{file}").st_mtime
         for k, v in self.new_files.items():
             files_data[k] = v
